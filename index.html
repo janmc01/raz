@@ -1,42 +1,103 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RAZ Network</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAZ Network</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('/mnt/data/RAZ.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 4em;
+      margin: 0;
+      color: #00ffcc;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    nav {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 1.2em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>RAZ Network</h1>
-        <p>Willkommen auf unserer Website!</p>
-    </header>
+  <header>
+    <h1>Willkommen bei RAZ-Network</h1>
+  </header>
 
-    <section class="intro">
-        <h2>Über unseren Server</h2>
-        <p>Unser Minecraft-Server bietet dir die besten Abenteuer und Herausforderungen! Komme und erlebe eine Welt voller Spaß, Freundschaften und spannenden Projekten!</p>
+  <nav>
+    <a href="#ueber">Über uns</a>
+    <a href="#server">Server Infos</a>
+    <a href="#beitreten">Beitreten</a>
+  </nav>
+
+  <main>
+    <section id="ueber">
+      <h2>Über uns</h2>
+      <p>RAZ-Network ist dein Minecraft-Server für Abenteuer, Kreativität und Community! Ob Survival, Minigames oder Roleplay – bei uns ist für jeden etwas dabei.</p>
     </section>
 
-    <section class="features">
-        <h2>Features</h2>
-        <ul>
-            <li>Survival Mode</li>
-            <li>Trading hall</li>
-            <li>Spaß</li>
-            <li>exclusive Plugins</li>
-        </ul>
+    <section id="server">
+      <h2>Server Informationen</h2>
+      <ul>
+        <li><strong>IP:</strong> raz-network.de</li>
+        <li><strong>Version:</strong> 1.20+</li>
+        <li><strong>Modus:</strong> Survival, Minigames, Economy</li>
+      </ul>
     </section>
 
-    <section class="join">
-        <h2>So trittst du bei</h2>
-        <p>Unsere Server-IP: <strong>raz-network.de</strong></p>
-        <p>Einfach Minecraft starten, Server hinzufügen und die IP eingeben!</p>
+    <section id="beitreten">
+      <h2>Wie beitreten?</h2>
+      <p>Starte Minecraft, gehe auf Multiplayer und füge unseren Server unter der IP <strong>raz-network.de</strong> hinzu. Viel Spaß!</p>
     </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 RAZ Network. Alle Rechte vorbehalten.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 RAZ-Network. Alle Rechte vorbehalten.</p>
+  </footer>
 </body>
 </html>
-
