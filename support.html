@@ -18,6 +18,7 @@
       text-align: center;
       padding: 60px 20px;
       background-color: rgba(0, 0, 0, 0.6);
+      position: relative;
     }
 
     header h1 {
@@ -25,6 +26,22 @@
       color: #00ffcc;
       text-shadow: 2px 2px 8px #000;
       margin: 0;
+    }
+
+    .home-link {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #00ffcc;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .home-link:hover {
+      background-color: #00ccaa;
     }
 
     main {
@@ -62,6 +79,7 @@
 <body>
   <header>
     <h1>Support</h1>
+    <a href="index.html" class="home-link">Startseite</a>
   </header>
 
   <main>
