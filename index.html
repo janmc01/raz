@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -38,11 +39,15 @@
       text-shadow: 2px 2px 8px #000;
     }
 
-
-    .support-link {
+    .top-links {
       position: absolute;
       top: 1rem;
-      right: 1rem;
+      left: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .top-links a {
       background-color: var(--main-color);
       color: black;
       padding: 0.5rem 1rem;
@@ -52,7 +57,7 @@
       transition: background 0.3s;
     }
 
-    .support-link:hover {
+    .top-links a:hover {
       background-color: #00ccaa;
     }
 
@@ -108,9 +113,14 @@
     }
 
     @media (max-width: 480px) {
-      .support-link {
+      .top-links {
         top: 0.5rem;
-        right: 0.5rem;
+        left: 0.5rem;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .top-links a {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
       }
@@ -119,8 +129,11 @@
 </head>
 <body>
   <header>
+    <div class="top-links">
+      <a href="login.html" class="login-link">Login</a>
+      <a href="support.html" class="support-link">Support</a>
+    </div>
     <h1>Willkommen bei RAZ-Network</h1>
-    <a href="support.html" class="support-link">Support</a>
   </header>
 
   <main>
