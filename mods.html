@@ -1,1 +1,35 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Fabric Server Modliste</title>
+  <style>
+    body { font-family: sans-serif; background: #f8f8f8; padding: 2em; }
+    ul { list-style: none; padding: 0; }
+    li { background: white; margin: 0.5em 0; padding: 1em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <h1>Mods auf dem Minecraft Fabric Server</h1>
+  <ul id="modList">Lade Mods...</ul>
+
+  <script>
+    fetch('mods.json')
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById('modList');
+        list.innerHTML = '';
+        data.forEach(mod => {
+          const li = document.createElement('li');
+          li.textContent = `${mod.FileName} (${mod.SizeMB} MB)`;
+          list.appendChild(li);
+        });
+      })
+      .catch(error => {
+        document.getElementById('modList').textContent = 'Fehler beim Laden der Modliste.';
+        console.error('Fehler:', error);
+      });
+  </script>
+</body>
+</html>
