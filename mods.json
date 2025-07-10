@@ -12,6 +12,14 @@
         "SizeMB":  "1,26"
     },
     {
+        "FileName":  "bclib-21.0.13.jar",
+        "SizeMB":  "1,42"
+    },
+    {
+        "FileName":  "better-end-21.0.11.jar",
+        "SizeMB":  "89,05"
+    },
+    {
         "FileName":  "cardinal-components-api-6.1.2.jar",
         "SizeMB":  "0,22"
     },
@@ -26,6 +34,10 @@
     {
         "FileName":  "deimos-1.21.1-fabric-2.2.jar",
         "SizeMB":  "0,05"
+    },
+    {
+        "FileName":  "Explorify v1.6.2 f10-48.jar",
+        "SizeMB":  "0,93"
     },
     {
         "FileName":  "fabric-api-0.116.4+1.21.1.jar",
@@ -56,12 +68,20 @@
         "SizeMB":  "0,19"
     },
     {
+        "FileName":  "midnightlib-1.6.9-fabric+1.21.jar",
+        "SizeMB":  "0,06"
+    },
+    {
         "FileName":  "nethermap-4.0.0-1.21.1.jar",
         "SizeMB":  "0,02"
     },
     {
         "FileName":  "owo-lib-0.12.10+1.21.jar",
         "SizeMB":  "1,08"
+    },
+    {
+        "FileName":  "repurposed_structures-7.5.16+1.21.1-fabric.jar",
+        "SizeMB":  "7,82"
     },
     {
         "FileName":  "smallships-fabric-1.21.1-2.0.0-b2.1.jar",
@@ -72,11 +92,31 @@
         "SizeMB":  "0,11"
     },
     {
+        "FileName":  "Terralith_1.21.x_v2.5.8.jar",
+        "SizeMB":  "2,97"
+    },
+    {
         "FileName":  "travelersbackpack-fabric-1.21.1-10.1.23.jar",
         "SizeMB":  "1,25"
     },
     {
+        "FileName":  "worldweaver-21.0.13.jar",
+        "SizeMB":  "2,25"
+    },
+    {
         "FileName":  "wraith-waystones-3.3.4+mc1.21.1.jar",
         "SizeMB":  "0,43"
+    },
+    {
+        "FileName":  "wunderlib-21.0.8.jar",
+        "SizeMB":  "0,37"
+    },
+    {
+        "FileName":  "YungsApi-1.21.1-Fabric-5.1.6.jar",
+        "SizeMB":  "1,20"
+    },
+    {
+        "FileName":  "YungsBetterNetherFortresses-1.21.1-Fabric-3.1.5.jar",
+        "SizeMB":  "0,70"
     }
 ]
