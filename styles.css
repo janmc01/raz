@@ -1,0 +1,22 @@
+
+body{
+    margin: 0;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: linear-gradient(to bottom right, #4004a1, #0462a1);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+.titles{
+    
+}
