@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAZ INFO</title>
-    <link rel="icon" href="razicon.png">
+    <link rel="icon" href="/razicon.png">
     <link rel="stylesheet" href="info.css">
+    <link rel="stylesheet" href="/default.css">
 </head>
 <body>
 
-    <a href="/" class="home-logo">
-        <img src="razicon.png" alt="Home">
-    </a>
+    <div id="header"></div>
 
     <h1>What is RAZ?</h1>
 
@@ -36,7 +35,7 @@
     <div class="projects">
         <div class="card primary">
             <div class="card-header">
-                <img src="MinecraftIcon.png" class="icon-img" alt="Minecraft">
+                <img src="/MinecraftIcon.png" class="icon-img" alt="Minecraft">
                 <span class="badge server">Server</span>
             </div>
             <h3>Minecraft Network</h3>
@@ -48,7 +47,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="Discord-Symbol-White.png" class="icon-img" alt="Discord">
+                <img src="/Discord-Symbol-White.png" class="icon-img" alt="Discord">
                 <span class="badge community">Community</span>
             </div>
             <h3>RAZ Discord</h3>
@@ -75,3 +74,11 @@
 
 </body>
 </html>
+
+<script>
+  fetch("/default.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>

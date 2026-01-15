@@ -1,0 +1,14 @@
+.owner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    background: #0f0d2b;
+    border-radius: 10px;
+}
+.owner img{
+    max-height: 500px;
+    width: auto;
+    padding: 20px;
+}
+

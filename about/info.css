@@ -12,26 +12,6 @@ body{
     display: flex;
 }
 
-.home-logo {
-    position: fixed;      /* bleibt immer oben links sichtbar */
-    top: 20px;
-    left: 20px;
-    z-index: 1000;        /* liegt über anderen Elementen */
-}
-
-.home-logo img {
-    width: 48px;          /* Größe des PNGs */
-    height: auto;        /* Seitenverhältnis bleibt korrekt */
-    cursor: pointer;
-
-    /* sanfte Animation */
-    transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.home-logo img:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
-}
 
 .subtitle {
     max-width: 720px;
