@@ -1,14 +1,97 @@
-.owner{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-    background: #0f0d2b;
-    border-radius: 10px;
-}
-.owner img{
-    max-height: 500px;
-    width: auto;
-    padding: 20px;
+body {
+    background: rgba(20, 20, 30, 0.8);
+    background-image: url('/img/mcsky_highres.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
+h1 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 48px;
+    color: #7289da;
+}
+
+.staff-panel-heading {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 50px;
+}
+
+.staff-title {
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 25px currentColor;
+    background: #13162e;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-bottom: 60px;
+}
+
+.member {
+    background: rgba(20, 20, 30, 0.8);
+    border-radius: 16px;
+    padding: 25px 20px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    transform: translateY(40px);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    transition: 0.3s;
+}
+
+.member:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 35px currentColor;
+}
+
+.member img {
+    width: 128px;
+}
+
+.staff-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+.rank {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.owner   { color: #aa0000; }
+.admin   { color: #ff4d4d; }
+.dev     { color: #00e1ff; }
+.mod     { color: #8aff6a; }
+.builder { color: #b98cff; }
+.tw_mod  { color: #6441a5; }
+.dc_mod  { color: #7289da; }
+.placholder   { color: #ffb000; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.member:nth-child(1){animation-delay:.1s}
+.member:nth-child(2){animation-delay:.2s}
+.member:nth-child(3){animation-delay:.3s}
+.member:nth-child(4){animation-delay:.4s}
+.member:nth-child(5){animation-delay:.5s}
