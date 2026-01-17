@@ -12,16 +12,28 @@
 <body>
   <div id="header"></div>
 
-  <h1 class="title">PLACEHOLDER</h1>
+  <h1 class="title">RAZ Minecraft</h1>
+  <!-- <button onclick="copy_ip()">Copy</button> -->
 
-  <div class="footer">
-    <ul class="socials">
-      <a href="https://discord.gg/jyTDUZxB8q">Discord</a>
-      <br></br>
-      <a href="http://youtube.com/@raz-network">Youtube</a>
-    </ul>
-    <p>Footer</p>
+  <div class="mc_status">
+    <div class="info status">
+      <h2>Server Status</h2>
+      <span id="status">Lade Status…</span>
+      <span id="status-dot"></span>
+
+
+      <div class="mc_info">
+        Spieler: <span id="players">–</span><br>
+        Version: <span id="version">–</span>
+      </div>
+    </div>
   </div>
+
+
+
+
+
+
     
     
 </body>
@@ -33,4 +45,28 @@
     .then(data => {
       document.getElementById("header").innerHTML = data;
     });
+
+  function copy_ip() {
+    navigator.clipboard.writeText("raz-network.de");
+  }
+</script>
+
+<script>
+fetch(`https://api.mcsrvstat.us/2/raz-network.de`)
+  .then(res => res.json())
+  .then(data => {
+    if (data.online) {
+      document.getElementById("status-dot").style.background = "lime";
+      document.getElementById("status").innerText = "Online";
+      document.getElementById("players").innerText =
+        `${data.players.online} / ${data.players.max}`;
+      document.getElementById("version").innerText = data.version;
+    } else {
+      document.getElementById("status-dot").style.background = "red";
+      document.getElementById("status").innerText = "Offline";
+    }
+  })
+  .catch(() => {
+    document.getElementById("status").innerText = "Status nicht verfügbar";
+  });
 </script>
