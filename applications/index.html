@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAZ</title>
     <link rel="icon" href="/img/razicon.png">
-    <link rel="stylesheet" href="__.css">
+    <link rel="stylesheet" href="applications.css">
     <link rel="stylesheet" href="/default.css">
     
 </head>
@@ -13,6 +13,30 @@
     <div id="header"></div>
 
     <h1 class="title">PLACEHOLDER</h1>
+
+    <section class="apply hidden">
+    <h2>Team Bewerbung</h2>
+
+    <form id="applyForm">
+        <input id="mcname" type="text" placeholder="Minecraft Name" required>
+        <input id="discord" type="text" placeholder="Discord Tag" required>
+        <input type="text" id="website" style="display:none">
+
+        <select id="rank" required>
+            <option value="">Choose a Rank</option>
+            <option>Media Rank</option>
+            <option>Staff</option>
+            <option>Builder</option>
+            <option>Developer</option>
+        </select>
+
+        <textarea id="experience" placeholder="Do you have any past staffing experience?" required></textarea>
+        <textarea id="anything_else" placeholder="Is there anything else we should know?" required></textarea>
+
+        <button type="submit">Bewerbung absenden</button>
+    </form>
+    </section>
+
     
     
 </body>
@@ -25,3 +49,69 @@
       document.getElementById("header").innerHTML = data;
     });
 </script>
+
+
+<script>
+document.getElementById("applyForm").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const data = {
+    embeds: [{
+      title: "📩 New Application",
+      color: 5793266,
+      fields: [
+        { name: "Minecraft Name", value: mcname.value, inline: true },
+        { name: "Discord", value: discord.value, inline: true },
+        { name: "Rank", value: rank.value, inline: true },
+        { name: "Experience", value: experience.value },
+        { name: "Anything else?", value: anything_else.value }
+      ],
+      footer: { text: "Made by Jan with 💖" },
+      timestamp: new Date()
+    }]
+  };
+
+  if (website.value !== "") return;
+
+  fetch("", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    alert("Success");
+    applyForm.reset();
+  })
+  .catch(() => alert("Error"));
+});
+</script>
+
+
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+</script>
+
+<script>
+let lastSubmit = 0;
+
+document.getElementById("applyForm").addEventListener("submit", e => {
+  const now = Date.now();
+  if (now - lastSubmit < 60000) {
+    alert("Bitte warte 1 Minute vor der nächsten Bewerbung.");
+    e.preventDefault();
+    return;
+  }
+  lastSubmit = now;
+});
+</script>
+
+
