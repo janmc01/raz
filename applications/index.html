@@ -25,17 +25,64 @@
         <select id="rank" required>
             <option value="">Choose a Rank</option>
             <option>Media Rank</option>
-            <option>Staff</option>
-            <option>Builder</option>
-            <option>Developer</option>
+            <option value="Staff">Staff</option>
+            <option value="Builder">Builder</option>
+            <option value="Developer">Developer</option>
         </select>
 
         <textarea id="experience" placeholder="Do you have any past staffing experience?" required></textarea>
-        <textarea id="anything_else" placeholder="Is there anything else we should know?" required></textarea>
+        <textarea id="reason" placeholder="Why should we choose you?" required></textarea>
 
         <button type="submit">Submit Application</button>
     </form>
+    <p id="formMessage"></p>
     </section>
+
+
+<script>
+  const form = document.getElementById("applyForm");
+  const message = document.getElementById("formMessage");
+
+  const startTime = Date.now();
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+      mcname: form.mcname.value.trim(),
+      discord: form.discord.value.trim(),
+      rank: form.rank.value,
+      experience: form.experience.value.trim(),
+      reason: form.reason.value.trim(),
+      website: form.website.value,
+      startTime: startTime
+    };
+
+    try {
+      const res = await fetch("http://DEINE-SERVER-IP:3000/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        message.textContent = "Bewerbung erfolgreich abgeschickt!";
+        message.style.color = "green";
+        form.reset();
+      } else {
+        message.textContent = result.error || "Fehler beim Absenden";
+        message.style.color = "red";
+      }
+    } catch (err) {
+      message.textContent = "Server nicht erreichbar";
+      message.style.color = "red";
+    }
+  });
+</script>
 
     
     
