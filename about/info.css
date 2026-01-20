@@ -35,6 +35,9 @@ h1 {
     line-height: 1.75;
 
     box-shadow: 0 0 30px rgba(10, 132, 255, 0.05);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+    transition: 0.3s;
 }
 .raz-story {
     border-left: 3px solid rgba(10, 132, 255, 0.4);
