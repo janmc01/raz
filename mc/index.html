@@ -16,7 +16,7 @@
   <!-- <button onclick="copy_ip()">Copy</button> -->
 
   <div class="mc_status">
-    <div class="info status">
+    <div class="info" id="bg">
       <h2>Server Status</h2>
       <span id="status">Lade Status…</span>
       <span id="status-dot"></span>
@@ -34,42 +34,42 @@
     </div>
   </div>
 
-    <div class="status">
-        <h2>development statuses</h2>
+  <div class="status">
+    <h2 class="devstat">Development statuses</h2>
 
-          <div class="mc_status">
+    <div class="mc_status">
               
-            <div class="info status">
-              <h2>Hub</h2>
-              <br>
-              <span>raz-network.de</span>
-            </div>
+      <div class="info">
+        <h2>Hub</h2>
+        <br>
+        <span>raz-network.de</span>
+      </div>
 
-            <div class="info status">
-              <h2>Duels</h2>
-              <br>
-              <span>Duels plugin is in development; J_an is working on it.</span>
-            </div>
+      <div class="info">
+        <h2>Duels</h2>
+        <br>
+        <span>Duels plugin is in development; J_an is working on it.</span>
+      </div>
 
-            <div class="info status">
-              <h2>Lamacraft</h2>
-              <br>
-              <span>Unpublished, but fully functional</span>
-            </div> 
+      <div class="info">
+        <h2>Lamacraft</h2>
+        <br>
+        <span>Unpublished, but fully functional</span>
+      </div> 
 
-            <div class="info status">
-              <h2>Minigames</h2>
-              <br>
-              <span>Development is currently paused</span>
-            </div> 
+      <div class="info">
+        <h2>Minigames</h2>
+        <br>
+        <span>Development is currently paused</span>
+      </div> 
 
-            <div class="info status">
-              <h2>Creative</h2>
-              <br>
-              <span>Fully funktionl. Join now: raz-network.de</span>
-            </div> 
-          </div>
+      <div class="info">
+        <h2>Creative</h2>
+        <br>
+        <span>Fully funktionl. Join now: raz-network.de</span>
+      </div> 
     </div>
+  </div>
 
 
 
@@ -104,12 +104,16 @@ fetch(`https://api.mcsrvstat.us/2/raz-network.de`)
       document.getElementById("players").innerText =
         `${data.players.online} / ${data.players.max}`;
       document.getElementById("version").innerText = data.version;
+      document.getElementById("bg").style.color = "#b98cff"
     } else {
       document.getElementById("status-dot").style.background = "red";
+      document.getElementById("bg").style.color = "red"
       document.getElementById("status").innerText = "Offline";
     }
   })
   .catch(() => {
     document.getElementById("status").innerText = "Status nicht verfügbar";
+    document.getElementById("bg").style.color = "offline"
+    document.getElementById("bg").style.color = "red"
   });
 </script>

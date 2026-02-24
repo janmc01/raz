@@ -45,18 +45,12 @@ h1{
     box-shadow: 0 0 35px currentColor;
 }
 
-
-
-.mc_info {
-    margin-top: 10px;
-    font-size: 14px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    display: inline-block;
-    font-weight: bold;
+.devstat{
+    font-size: 3rem;
+    text-decoration: underline;
 }
 
-.owner   { color: #aa0000; }
+.offline   { color: #aa0000; }
 .admin   { color: #ff4d4d; }
 .dev     { color: #00e1ff; }
 .mod     { color: #8aff6a; }
@@ -65,3 +59,14 @@ h1{
 .dc_mod  { color: #7289da; }
 .placholder   { color: #ffb000; }
 
+@media screen and (max-width: 1450px) {
+  h2 { margin: 20px; 
+    text-align: center;
+}
+
+    .title {
+        margin: 20px;
+        text-align: center;
+
+    }
+}
