@@ -34,6 +34,12 @@ h2{
     text-align: center;
 }
 
+@media screen and (max-width: 1000px) {
+  .title { margin: 20px; 
+    text-align: center;
+}
+
+}
 
 
 

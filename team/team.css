@@ -95,3 +95,10 @@ h1 {
 .member:nth-child(3){animation-delay:.3s}
 .member:nth-child(4){animation-delay:.4s}
 .member:nth-child(5){animation-delay:.5s}
+
+@media screen and (max-width: 1000px) {
+  h1 { margin: 100px; 
+    text-align: center;
+}
+
+}

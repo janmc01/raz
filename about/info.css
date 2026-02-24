@@ -152,3 +152,10 @@ h1 {
         grid-column: span 1;
     }
 }
+
+@media screen and (max-width: 1000px) {
+  h1 { margin: 100px; 
+    text-align: center;
+}
+
+}
