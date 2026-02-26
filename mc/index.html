@@ -71,9 +71,27 @@
     </div>
   </div>
 
+  <div class="discord-box">
+    <div class="discord-header">
+        <img id="discord-icon" src="https://cdn.discordapp.com/icons/1188124110656643255/bc78354d35abcb39924ea099ffb95609.png?size=128" alt="Server Icon">
+        <div>
+          <h3 id="discord-name">Discord Server</h3>
+          <div class="online-wrapper">
+            <span class="pulse"></span>
+            <p><span id="discord-online">0</span> Mitglieder online</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://discord.gg/DEININVITE" target="_blank" class="discord-button">
+          Join Now
+      </a>
+  </div>
 
 
-<p style="color:#9C9C9C", "text-align: center">We are not affiliated with, endorsed by, sponsored by, or in any way associated with Mojang Studios, Mojang AB, or Microsoft Corporation.</p>
+
+<p class="footer">We are not affiliated with, endorsed by, sponsored by, or in any way associated with Mojang Studios, Mojang AB, or Microsoft Corporation.</p>
+
 
 
 
@@ -104,16 +122,58 @@ fetch(`https://api.mcsrvstat.us/2/raz-network.de`)
       document.getElementById("players").innerText =
         `${data.players.online} / ${data.players.max}`;
       document.getElementById("version").innerText = data.version;
-      document.getElementById("bg").style.color = "#b98cff"
+      document.getElementById("bg").style.color = "#b98cff";
     } else {
       document.getElementById("status-dot").style.background = "red";
-      document.getElementById("bg").style.color = "red"
+      document.getElementById("bg").style.color = "red";
       document.getElementById("status").innerText = "Offline";
     }
   })
   .catch(() => {
     document.getElementById("status").innerText = "Status nicht verfügbar";
-    document.getElementById("bg").style.color = "offline"
     document.getElementById("bg").style.color = "red"
   });
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  fetch("https://discord.com/api/guilds/1188124110656643255/widget.json")
+    .then(response => response.json())
+    .then(data => {
+
+        document.getElementById("discord-name").textContent = data.name;
+
+        let target = data.presence_count;
+        let current = 0;
+        let duration = 1200;
+        let stepTime = Math.abs(Math.floor(duration / target));
+        let counter = document.getElementById("discord-online");
+
+        let timer = setInterval(function () {
+            current += 1;
+            counter.textContent = current;
+            if (current >= target) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+
+        if (data.icon) {
+            document.getElementById("discord-icon").src =
+              `https://cdn.discordapp.com/icons/${data.id}/${data.icon}.png`;
+        }
+    })
+    .catch(error => console.error("Fehler:", error));
+
+});
+
+fetch("https://discord.com/api/v9/invites/jyTDUZxB8q?with_counts=true")
+  .then(res => red.json())
+  .then(data => {
+    if (data.guild.icon) {
+      const iconUrl = `https://cdn.discordapp.com/icons/1188124110656643255/bc78354d35abcb39924ea099ffb95609.png?size=128`;
+      document.getElementById("discord-icon").src = iconUrl;
+    }
+  })
 </script>

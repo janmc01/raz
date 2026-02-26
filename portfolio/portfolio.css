@@ -1,26 +1,24 @@
-body {
+body{
+    margin: 0;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
     background-image: url('/img/mcsky_highres.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
 }
+
+
 h1{
     font-size: 5rem;
     color: #7289da;
 }
 
-
-
-#status-dot {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    margin-right: 10px;
-    background: gray;
-}
-
-.mc_status {
+.projects{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -28,7 +26,7 @@ h1{
     margin-bottom: 60px;
 }
 
-.info {
+.card{
     background: rgba(20, 20, 30, 0.8);
     border-radius: 16px;
     padding: 25px 20px;
@@ -39,50 +37,26 @@ h1{
     opacity: 0;
     animation: fadeUp 0.8s ease forwards;
     transition: 0.3s;
+    color: #ffb000;
 }
 
-.info:hover {
+.card:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 0 35px currentColor;
 }
 
-.devstat{
-    font-size: 3rem;
+.card h3{
+    font-size: 1.5rem;
     text-decoration: underline;
 }
 
 
-
-.footer{
-    color: #9C9C9C;
-    text-align: center;
-    max-width: 700px;
-    margin: 20px;
-}
-
-
-
-
-
-
-.offline   { color: #aa0000; }
-.admin   { color: #ff4d4d; }
-.dev     { color: #00e1ff; }
-.mod     { color: #8aff6a; }
-.status { color: #b98cff; }
-.tw_mod  { color: #6441a5; }
-.dc_mod  { color: #7289da; }
-.placholder   { color: #ffb000; }
-
-@media screen and (max-width: 1450px) {
-  h2 { margin: 20px; 
+@media screen and (max-width: 1000px) {
+  .title { margin: 20px; 
     text-align: center;
 }
 
-    .title {
-        margin: 50px;
-        text-align: center;
-        font-size: 3rem;
-
-    }
 }
+
+
+

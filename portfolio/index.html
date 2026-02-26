@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZ</title>
+    <link rel="icon" href="/img/razicon.png">
+    <link rel="stylesheet" href="/default.css">
+    <link rel="stylesheet" href="portfolio.css">
+    
+
+</head>
+<body>
+    <div id="header"></div>
+
+    <h1 class="title">My Portfolio</h1>
+
+    <div class="projects">
+
+
+      <div class="card">
+        <h3>This Page</h3>
+        <span>Last Update:</span>
+        <span id="page_update"></span>
+        <span>Languages: Html, Css</span>
+        <br>
+        <a href="https://github.com/janmc01/OnJoinTP">Repository on Github</a>
+      </div>
+
+      <div class="card">
+          <h3>OnJoinTp</h3>
+          <span>Last Update:</span>
+          <span id="onjointp_update"></span>
+          <span>Languages: Java</span>
+          <br>
+          <a href="https://github.com/janmc01/OnJoinTP">Repository on Github</a>
+      </div>
+
+      <div class="card">
+          <h3>RAZ Discord Bot</h3>
+          <span>Last Update:</span>
+          <span id="dcbot_update"></span>
+          <span>Languages: Python</span>
+          <br>
+          <a href="https://github.com/janmc01/RAZbot">Repository on Github</a>
+      </div>
+
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+  fetch("/default.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+
+<script>
+  async function getLastPush(owner, repo) {
+    try {
+      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+      
+      if (!response.ok) {
+        throw new Error("Repository nicht gefunden");
+      }
+
+      const data = await response.json();
+      
+      const date = new Date(data.pushed_at);
+      document.getElementById("page_update").textContent = date.toLocaleDateString("de-DE");
+      
+      console.log(`Letzter Code-Push: ${data.pushed_at}`);
+    } catch (error) {
+      console.error("Fehler:", error);
+      document.getElementById("page_update").textContent = "Fehler beim Laden";
+    }
+  }
+
+  getLastPush('janmc01', 'raz'); 
+</script>
+<script>
+  async function getLastPush(owner, repo) {
+    try {
+      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+      
+      if (!response.ok) {
+        throw new Error("Repository nicht gefunden");
+      }
+
+      const data = await response.json();
+      
+      const date = new Date(data.pushed_at);
+      document.getElementById("onjointp_update").textContent = date.toLocaleDateString("de-DE");
+      
+      console.log(`Letzter Code-Push: ${data.pushed_at}`);
+    } catch (error) {
+      console.error("Fehler:", error);
+      document.getElementById("onjointp_update").textContent = "Fehler beim Laden";
+    }
+  }
+
+  getLastPush('janmc01', 'OnJoinTP'); 
+</script>
+<script>
+  async function getLastPush(owner, repo) {
+    try {
+      const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+      
+      if (!response.ok) {
+        throw new Error("Repository nicht gefunden");
+      }
+
+      const data = await response.json();
+      
+      const date = new Date(data.pushed_at);
+      document.getElementById("dcbot_update").textContent = date.toLocaleDateString("de-DE");
+      
+      console.log(`Letzter Code-Push: ${data.pushed_at}`);
+    } catch (error) {
+      console.error("Fehler:", error);
+      document.getElementById("dcbot_update").textContent = "Fehler beim Laden";
+    }
+  }
+
+  getLastPush('janmc01', 'RAZbot'); 
+</script>
