@@ -50,6 +50,13 @@ h1{
     text-decoration: underline;
 }
 
+.repolink{
+    color: aqua;
+}
+.repolink:visited {
+  color: aqua;
+}
+
 
 @media screen and (max-width: 1000px) {
   .title { margin: 20px; 
