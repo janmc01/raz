@@ -49,6 +49,7 @@ h1{
 .devstat{
     font-size: 3rem;
     text-decoration: underline;
+    text-align: center;
 }
 
 
@@ -60,7 +61,39 @@ h1{
     margin: 20px;
 }
 
+.copy {
+    background-color: #3300bd;
+    color: #ffffff;
+    border-radius: 16px;
+    display: center;
+    align-items: center;
+    padding: 8px 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
 
+.copy:active {
+    background: #280095;
+}
+
+.copy:disabled {
+    background: #02056e;
+    color: #808080;
+    cursor: not-allowed;
+}
+
+.copy:hover:not(:disabled) {
+    transform: translateY(-3px);
+    transition: 0.5s ease;
+}
+
+.mc-title {
+    display: center;
+    margin: 70px auto 100px auto;
+    justify-content: center;
+}
 
 
 

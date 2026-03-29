@@ -11,9 +11,15 @@
 </head>
 <body>
   <div id="header"></div>
+  
+  <img
+    class="mc-title"
+    id="title"
+    style="width: 500px; max-width: 100%;"
+    src="/img/minecraft_title.png"
+    alt="RAZ Minecraft Logo" />
+  
 
-  <h1 class="title">RAZ Minecraft</h1>
-  <!-- <button onclick="copy_ip()">Copy</button> -->
 
   <div class="mc_status">
     <div class="info" id="bg">
@@ -28,9 +34,13 @@
     </div>
       
     <div class="info status">
-      <h2>MORE COMING SOON</h2>
-      <br>
-      <span>raz-network.de</span>
+      <h2>Join now!</h2>
+      <span class="mc-ip">mc.raz-network.de</span>
+      <br><br><br>
+      <button type="button" class="copy" data-copy=".mc-ip">
+        <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
+        <span class="copy-label">Copy</span>
+      </button>
     </div>
   </div>
 
@@ -38,23 +48,17 @@
     <h2 class="devstat">Development statuses</h2>
 
     <div class="mc_status">
-              
-      <div class="info">
-        <h2>Hub</h2>
-        <br>
-        <span>The center of it all. The Hub!<br>Fully functional.</span>
-      </div>
-
+     
       <div class="info">
         <h2>Duels</h2>
         <br>
-        <span>Duels plugin in development; J_an in charge</span>
+        <span>Development is currently paused</span>
       </div>
 
       <div class="info">
         <h2>Lamacraft</h2>
         <br>
-        <span>Not available at the moment; Togibu is working on something big 👀</span>
+        <span>Not available at the moment;<br>Togibu is working on something big 👀</span>
       </div> 
 
       <div class="info">
@@ -63,11 +67,6 @@
         <span>Development started; Danie_LL in charge</span>
       </div> 
 
-      <div class="info">
-        <h2>Creative</h2>
-        <br>
-        <span>For all of the creative builders and for those who just wanna have some fun!<br>Fully functional.</span>
-      </div> 
     </div>
   </div>
 
@@ -84,7 +83,7 @@
       </div>
 
       <a href="https://discord.gg/uUuYZcVUYe" target="_blank" class="discord-button">
-          Join Now
+          Join Now!
       </a>
   </div>
 
@@ -94,7 +93,8 @@
 
 
 
-
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
     
 </body>
@@ -113,7 +113,7 @@
 </script>
 
 <script>
-fetch(`https://api.mcsrvstat.us/2/raz-network.de`)
+fetch(`https://api.mcsrvstat.us/2/mc.raz-network.de`)
   .then(res => res.json())
   .then(data => {
     if (data.online) {
@@ -130,7 +130,7 @@ fetch(`https://api.mcsrvstat.us/2/raz-network.de`)
     }
   })
   .catch(() => {
-    document.getElementById("status").innerText = "Status nicht verfügbar";
+    document.getElementById("status").innerText = "Status not available";
     document.getElementById("bg").style.color = "red"
   });
 </script>
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
               `https://cdn.discordapp.com/icons/${data.id}/${data.icon}.png`;
         }
     })
-    .catch(error => console.error("Fehler:", error));
+    .catch(error => console.error("Error:", error));
 
 });
 
@@ -176,4 +176,27 @@ fetch("https://discord.com/api/v9/invites/jyTDUZxB8q?with_counts=true")
       document.getElementById("discord-icon").src = iconUrl;
     }
   })
+</script>
+<script>
+  document.querySelectorAll(".copy").forEach(copyButton => {
+    copyButton.addEventListener("click", () => {
+      const targetElement = document.querySelector(copyButton.dataset.copy);
+      const textToCopy = targetElement.textContent
+        .replace(/\s+/g, " ")
+        .trim();
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const label = copyButton.querySelector(".copy-label");
+        const originalText = label.textContent;
+
+        copyButton.disabled = true;
+        label.textContent = "Copied!";
+
+        setTimeout(() => {
+          copyButton.disabled = false;
+          label.textContent = originalText;
+        }, 2000);
+      });
+    });
+  });
 </script>

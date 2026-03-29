@@ -8,6 +8,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-color: rgb(35, 0, 68);
     justify-content: center;
     align-items: center;
     flex-direction: column;
