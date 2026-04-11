@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 fetch("https://discord.com/api/v9/invites/jyTDUZxB8q?with_counts=true")
-  .then(res => red.json())
+  .then(res => res.json())
   .then(data => {
     if (data.guild.icon) {
       const iconUrl = `https://cdn.discordapp.com/icons/1188124110656643255/bc78354d35abcb39924ea099ffb95609.png?size=128`;

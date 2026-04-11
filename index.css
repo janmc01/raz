@@ -66,6 +66,14 @@ h3{
   .title { margin: 20px; 
     text-align: center;
 }
+    .mc-list {
+        margin: 10px;
+        text-align: center;
+    }
+    .description {
+        margin: 10px;
+        text-align: center;
+    }
 
 }
 

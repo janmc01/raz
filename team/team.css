@@ -1,104 +1,135 @@
-body {
-    background: rgba(20, 20, 30, 0.8);
-    background-image: url('/img/mcsky_highres.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
+        :root {
+            --color-owner: #aa0000;
+            --color-admin: #ff4d4d;
+            --color-dev: #00e1ff;
+            --color-mod: #640064;
+            --color-builder: #b98cff;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
 
-h1 {
-    text-align: center;
-    margin: 40px 0;
-    font-size: 48px;
-    color: #7289da;
-}
+        body {
+            /* Hintergrund-Logik aus deiner default.css übernommen */
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'Segoe UI', Roboto, sans-serif; /* Modernerer Font als Courier für Team-Karten */
+            display: block; /* Überschreibt flex vom Body für besseres Scrolling */
+        }
 
-.staff-panel-heading {
-    display: flex;
-    justify-content: center;
-    margin: 40px 0 50px;
-}
+        .container {
+            max-width: 1100px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
 
-.staff-title {
-    padding: 10px 40px;
-    border-radius: 50px;
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-    box-shadow: 0 0 25px currentColor;
-    background: #13162e;
-}
+        .main-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            color: #7289da;
+            text-shadow: 0 0 20px rgba(114, 137, 218, 0.4);
+        }
 
-.team {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 35px;
-    margin-bottom: 60px;
-}
+        .section-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px 0 30px;
+        }
 
-.member {
-    background: rgba(20, 20, 30, 0.8);
-    border-radius: 16px;
-    padding: 25px 20px;
-    width: 220px;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(0,0,0,0.5);
-    transform: translateY(40px);
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
-    transition: 0.3s;
-}
+        .section-label span {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-.member:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 0 35px currentColor;
-}
+        /* Das Grid-System */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
 
-.member img {
-    width: 128px;
-}
+        /* Die Team-Karte */
+        .member-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.8s ease forwards;
+        }
 
-.staff-name {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 15px;
-}
+        .member-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--rank-color);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px var(--rank-color);
+        }
 
+        /* Minecraft Skin Styling */
+        .member-card img {
+            width: 130px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+        }
 
-.rank {
-    margin-top: 10px;
-    font-size: 14px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    display: inline-block;
-    font-weight: bold;
-}
+        .name {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
 
-.owner   { color: #aa0000; }
-.admin   { color: #ff4d4d; }
-.dev     { color: #00e1ff; }
-.mod     { color: #8aff6a; }
-.builder { color: #b98cff; }
-.tw_mod  { color: #6441a5; }
-.dc_mod  { color: #7289da; }
-.placholder   { color: #ffb000; }
+        .rank-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            background: var(--rank-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        .description {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
 
+        /* Dynamische Farben via Klassen */
+        .owner { --rank-color: var(--color-owner); }
+        .admin { --rank-color: var(--color-admin); }
+        .dev   { --rank-color: var(--color-dev); }
+        .mod   { --rank-color: var(--color-mod); }
 
-.member:nth-child(1){animation-delay:.1s}
-.member:nth-child(2){animation-delay:.2s}
-.member:nth-child(3){animation-delay:.3s}
-.member:nth-child(4){animation-delay:.4s}
-.member:nth-child(5){animation-delay:.5s}
+        /* Animation übernommen aus deinem Code */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-@media screen and (max-width: 1000px) {
-  h1 { margin: 100px; 
-    text-align: center;
-}
+        /* Spezial-Effekt für dich als Founder */
+        .highlight {
+            grid-column: 1 / -1;
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
-}
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .highlight { grid-column: auto; }
+        }
