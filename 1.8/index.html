@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.8 | RAZ</title>
+    <link rel="icon" href="/img/razicon.png">
+    <link rel="stylesheet" href="/default.css">
+    <link rel="stylesheet" href="1.8.css">
+    <script src="server-status.js"></script>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <div class="container">
+        <h1 class="main-title">Old combat</h1>
+
+        <div class="grid">
+            <div class="card info highlight hi">
+                <img src="/img/Stone_Sword_JE2_BE2.png" alt="">
+                <span class="name">Info</span>
+                <span class="rank-badge">IP: eu.raz-network.de</span>
+                <p class="description">Version: 1.8.9</p>
+                <p class="description">Developer: J_an</p>
+                <p class="description">Support & questins: <a href="https://discord.com/invite/jyTDUZxB8q">Discord</a></p>
+
+            </div>
+            <div class="card info highlight hi">
+                <img src="/img/Grass_Block_29_JE3.webp" alt="">
+                <span class="name">Status</span>
+                <span class="rank-badge" id="server-status">-</span>
+                <span class="description" id=""></span>
+                <!-- '<p class="description">
+                    Responsible for the development of the 1.21 network, 
+                    system administration and support 
+                </p>' -->
+            </div>           
+
+        </div>
+
+        <div class="section-label">
+            <span>Gamemodes</span>
+        </div>
+
+        <div class="grid">
+            <div class="card gamemode">
+                <img src="/img/Bed.webp" alt="Bed">
+                <span class="name">Bedwars</span>
+                <!-- <span class="rank-badge">Co-Owner Of RAZ</span> -->
+                <p class="description">
+                    The Gamemode we all loved. Bedwars but without lags or cheaters.
+                    Our Servers are realy fast and located in Germany.
+                </p>
+            </div>
+            <div class="card gamemode">
+                <img src="/img/Red_Terracotta.webp" alt="Bridge">
+                <span class="name">The Bridge</span>
+                <p class="description"></p>
+            </div>
+
+            <div class="card gamemode">
+                <img src="/img/frage-zeichen.svg" alt="?">
+                <span class="name">Ideas?</span>
+                <p class="description">Join Now the Discord Server!</p>
+                
+                <span class="rank-badge"><a class="dc-link" href="https://discord.com/invite/jyTDUZxB8q">Discord</a></span>
+
+            </div>
+
+        </div>
+
+        <div class="section-label">
+            <span>Other</span>
+        </div>
+
+        <div class="grid">
+            <div class="card other">
+                <p class="description footer">We are not affiliated with, endorsed by, sponsored by, or in any way associated with Mojang Studios, Mojang AB, or Microsoft Corporation.</p>
+            </div>
+
+        </div>
+
+        
+    </div>
+
+
+
+    <script>
+        fetch("/default.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>

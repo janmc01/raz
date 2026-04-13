@@ -1,0 +1,150 @@
+        :root {
+            --color-info: #aa0000;
+            --color-admin: #ff4d4d;
+            --color-gamemode: #00e1ff;
+            --color-other: #640064;
+            --color-d: #b98cff;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            /* Hintergrund-Logik aus deiner default.css übernommen */
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'Segoe UI', Roboto, sans-serif; /* Modernerer Font als Courier für Team-Karten */
+            display: block; /* Überschreibt flex vom Body für besseres Scrolling */
+        }
+
+
+
+        .container {
+            max-width: 1100px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            color: #7289da;
+            text-shadow: 0 0 20px rgba(114, 137, 218, 0.4);
+        }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 60px 0 30px;
+        }
+
+        .section-label span {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Das Grid-System */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .hi {
+            width: 1100px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+        
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--rank-color);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px var(--rank-color);
+        }
+
+        /* Minecraft Skin Styling */
+        .card img {
+            width: 130px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+        }
+
+        .name {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            background: var(--rank-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .description {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        /* Dynamische Farben via Klassen */
+        .info { --rank-color: var(--color-info); }
+        .admin { --rank-color: var(--color-admin); }
+        .gamemode   { --rank-color: var(--color-gamemode); }
+        .mod   { --rank-color: var(--color-mod); }
+        .other { --rank-color: var(--color-other)}
+
+        /* Animation übernommen aus deinem Code */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Spezial-Effekt für dich als Founder */
+        .highlight {
+            grid-column: 1 / -1;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+
+
+        .dc-link {
+            text-decoration: none;
+        }
+
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .highlight { grid-column: auto; }
+        }
