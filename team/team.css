@@ -3,6 +3,8 @@
             --color-admin: #ff4d4d;
             --color-dev: #00e1ff;
             --color-mod: #640064;
+            --color-active: #00ff00;
+            --color-inactive: #ff0000;
             --color-builder: #b98cff;
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
@@ -115,7 +117,10 @@
         .admin { --rank-color: var(--color-admin); }
         .dev   { --rank-color: var(--color-dev); }
         .mod   { --rank-color: var(--color-mod); }
+        .active { --rank-color: var(--color-active); }
+        .inactive { --rank-color: var(--color-inactive); }
 
+        
         /* Animation übernommen aus deinem Code */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(30px); }
