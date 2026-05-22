@@ -11,12 +11,11 @@
         }
 
         body {
-            /* Hintergrund-Logik aus deiner default.css übernommen */
             margin: 0;
             padding: 0;
             color: white;
-            font-family: 'Segoe UI', Roboto, sans-serif; /* Modernerer Font als Courier für Team-Karten */
-            display: block; /* Überschreibt flex vom Body für besseres Scrolling */
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            display: block;
         }
 
         .container {
