@@ -49,12 +49,25 @@
             text-transform: uppercase;
         }
 
-        /* Das Grid-System */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             justify-content: center;
+        }
+
+        .leadership {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .leadership .member-card {
+            flex: 1 1 320px;
+            max-width: 360px;
         }
 
         /* Die Team-Karte */
@@ -111,7 +124,6 @@
             line-height: 1.5;
         }
 
-        /* Dynamische Farben via Klassen */
         .owner { --rank-color: var(--color-owner); }
         .admin { --rank-color: var(--color-admin); }
         .dev   { --rank-color: var(--color-dev); }
@@ -120,20 +132,17 @@
         .inactive { --rank-color: var(--color-inactive); }
 
         
-        /* Animation übernommen aus deinem Code */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Spezial-Effekt für dich als Founder */
         .highlight {
-            grid-column: 1 / -1;
-            max-width: 400px;
-            margin: 0 auto;
+            border-color: var(--rank-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 18px var(--rank-color);
         }
 
         @media (max-width: 768px) {
             .main-title { font-size: 2.5rem; }
-            .highlight { grid-column: auto; }
+            .leadership .member-card { flex-basis: 100%; }
         }
